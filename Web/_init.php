@@ -1,6 +1,6 @@
 <?php
 define('NET_ROOT', realpath(dirname(__FILE__) . '/..'));
-define('HOST_NAME','127.0.0.1:2345');
+define('HOST_NAME',\WorkerMan\Lib\Store::get('host'));
 require_once NET_ROOT . '/Lib/Store.php';
 
 use Workerman\Protocols\Http;
