@@ -17,7 +17,7 @@ if(!empty($_GET))
     $url_data = parse_url($_SERVER['REQUEST_URI']);
     if(isset($url_data['path']))
     {
-        _header('Location: http://' . $host_name .$url_data['path'], true, 301);
+        _header('Location: http://' . $host_name .$url_data['path'], true, 302);
         return;
     }
 }
@@ -63,7 +63,7 @@ else
     if($func != "\\Workerman\\Modules\\login"){
         $auth = auth();
         if(!$auth){
-            _header('Location: http://' . $host_name.'/login' , true, 301);
+            _header('Location: http://' . $host_name.'/login' , true, 302);
             return;
         }
     }
