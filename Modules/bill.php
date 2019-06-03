@@ -9,6 +9,10 @@ function bill()
     }
     \WorkerMan\Lib\Store::config(NET_ROOT."/Data/bill_{$month}.php");
     $list = \WorkerMan\Lib\Store::getAll();
+    $total = [];
+    foreach ($list  as $row){
+        $total[$row['username']][] = $row['consume_sum'];
+    }
     include NET_ROOT . '/Views/bill.tpl.php';
 }
 

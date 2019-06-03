@@ -49,6 +49,17 @@
                 <div class="layui-card-header">
 <!--                    <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>-->
                     <button class="layui-btn" onclick="xadmin.open('添加用户','/bill/add',800,600)"><i class="layui-icon"></i>添加</button>
+                    <button class="layui-btn layui-btn-danger">
+                        <?php
+                        $sum = 0;
+                        foreach ($total as $k => $v){
+                            $sum = $sum+array_sum($v);
+                            echo $k."消费：".array_sum($v)."元，";
+                        }
+                        echo "共计：".$sum."元。";
+                        ?>
+                    </button>
+
                 </div>
                 <div class="layui-card-body ">
                     <table class="layui-table layui-form">
