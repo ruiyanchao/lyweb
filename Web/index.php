@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__.'/_init.php';
 $url_info = parse_url($_SERVER['REQUEST_URI']);
+
+$outerRule  = [
+    "\\Workerman\\Modules\\login",
+    "\\Workerman\\Modules\\index"
+];
+
 if(isset($url_info['path']))
 {
     $path = $url_info['path'];
@@ -41,7 +47,7 @@ if(isset($tmp_arr[0]))
     unset($tmp_arr[0]);
 }else
 {
-    $func = "\\Workerman\\Modules\\home";
+    $func = "\\Workerman\\Modules\\index";
 }
 $func = str_replace('-', '_', $func);
 if(!function_exists($func))
@@ -60,7 +66,7 @@ if(!function_exists($func))
 else
 {
     \Workerman\Protocols\Http::sessionStart();
-    if($func != "\\Workerman\\Modules\\login"){
+    if(!in_array($func,$outerRule)){
         $auth = auth();
         if(!$auth){
             _header('Location: http://' . $host_name.'/login' , true, 302);
