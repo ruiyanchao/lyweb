@@ -30,7 +30,7 @@ function login()
 function logout()
 {
     destroy_session();
-    _header('Location: http://' . HOST_NAME.'/login' , true, 301);
+    _header('Location: http://' . HOST_NAME.'/login' , true, 302);
     return;
 }
 
