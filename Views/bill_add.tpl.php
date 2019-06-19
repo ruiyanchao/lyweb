@@ -35,6 +35,7 @@
                             <option value="晚饭">晚饭</option>
                             <option value="其他饮食">其他饮食</option>
                             <option value="日用">日用</option>
+                            <option value="日用">旅游</option>
                             <option value="其他">其他</option></select>
                     </div>
                 </div>
