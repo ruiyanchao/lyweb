@@ -25,7 +25,7 @@ function bill_add()
         $consume_type = $_POST['consume_type'];
         $consume_time = $_POST['consume_time'];
         $consume_sum  = $_POST['consume_sum'];
-        $consume_remark  = $_POST['consume_remark'] ?? "";
+        $consume_remark  = $_POST['consume_remark'];
         $username     = $_SESSION['username'];
         $month = date("Y-m",strtotime($consume_time));
         \WorkerMan\Lib\Store::config(NET_ROOT."/Data/bill_{$month}.php");

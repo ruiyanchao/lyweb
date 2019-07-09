@@ -89,7 +89,7 @@
                                 <td><?php echo $value['consume_type'] ?></td>
                                 <td><?php echo $value['consume_sum'] ?></td>
                                 <td><?php echo $value['consume_time'] ?></td>
-                                <td><?php echo $value['consume_remark'] ?? "" ?></td>
+                                <td><?php echo $value['consume_remark'] ?></td>
                                 <td class="td-manage">
 <!--                                    <a title="编辑" onclick="xadmin.open('编辑','admin-edit.html')" href="javascript:;">-->
 <!--                                        <i class="layui-icon">&#xe642;</i>-->
